@@ -1,5 +1,5 @@
 {% set name = "astropy-iers-data" %}
-{% set version = "0.2024.9.2.0.33.23" %}
+{% set version = "0.2025.1.13.0.34.51" %}
 
 package:
   name: {{ name|lower }}
