@@ -17,19 +17,20 @@ build:
 requirements:
   host:
     - python
+    - pip
     - hatchling
     - hatch-vcs
-    - pip
   run:
     - python
 
 test:
   imports:
     - astropy_iers_data
-  commands:
-    - pip check
   requires:
     - pip
+  commands:
+    - pip check
+    - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
 
 about:
   home: https://github.com/astropy/astropy-iers-data
