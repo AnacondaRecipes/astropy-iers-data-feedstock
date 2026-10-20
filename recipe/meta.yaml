@@ -24,13 +24,18 @@ requirements:
     - python
 
 test:
+  source_files:
+    - tests
+    - astropy_iers_data/data
   imports:
     - astropy_iers_data
   requires:
     - pip
+    - pytest
   commands:
     - pip check
     - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
+    - pytest -vv tests
 
 about:
   home: https://github.com/astropy/astropy-iers-data
